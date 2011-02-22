@@ -14,7 +14,7 @@ module Rails
       block = cache_block(Pathname.new(root)) unless block_given?
 
       opts = {
-        :cache => config.cache_offline_app,
+        :cache => config.cache_offline_app || config.cache_classes,
         :root => root,
         :logger => Rails.logger
       }
